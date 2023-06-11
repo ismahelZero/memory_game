@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300&family=Sigmar+One&family=Exo+2:wght@800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", cursive;
+  background-color: #d38e78;
+  background-image: url("images/qala4.jpg");
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+}
+
+/***** index.html *****/
+
+.outer-container-home {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.inner-container-home{
+  width: 70%;
+  height: auto;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  color: white;
+  border-radius: 50px;
+}
+
+.inner-container-home h2 {
+  margin: 25px 0;
+}
+
+.inner-container-home p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.home-img {
+  width: 25%;
+}
+
+.start {
+  border-radius: 40px;
+  text-decoration: none;
+  width: 200px;
+  margin: 20px 20px;
+  border: none;
+  color: black;
+  background: rgb(226,99,32);
+  background: linear-gradient(0deg, rgb(165, 137, 13) 0%, gold 100%);
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  font-family: "Exo 2", sans-serif;
+  display:inline-block;
+}
+
+/***** home.html *****/
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 15vh 70vh;
+  grid-template-areas:
+  "header"
+  "score-panel"
+  "deck";
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+}
+
+/*** Header ***/
+header {
+  grid-area: header;
+  margin: 15px 0;
+  font-family: "Exo 2", cursive;
+  letter-spacing: 1px;
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+
+#pl1 {
+
+  font-size: 0.8em;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+
+}
+
+#pl2 {
+
+  font-size: 0.8em;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+}
+
+.header h1 {
+   margin-top: 10px;
+}
+
+.decoration {
+  font-size: 1.3em;
+}
+
+/*** Score Panel ***/
+.score-panel {
+  grid-area: score-panel;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas: "star-rating moves timer-container reset-btn";
+  width: 70%;
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Exo 2", sans-serif;
+}
+
+#star-rating {
+  grid-area: star-rating;
+  list-style: none;
+}
+
+.star {
+  display: inline-block;
+  color: rgb(255, 217, 0);
+  font-size: 1.2rem;
+}
+
+.fa-star {
+-webkit-text-stroke-width: 0.25px;
+-webkit-text-stroke-color: rgb(57, 56, 56);
+}
+
+.moves {
+  grid-area: moves;
+}
+
+#mp1{
+  position: absolute;
+  left: 15px;
+  top: 55px;
+}
+
+#mp2{
+  position: absolute;
+  right: 19px;
+  top: 55px;
+}
+
+.moves h3 {
+  font-size: 0.6rem;
+}
+
+.moves-header {
+  color: rgb(0, 0, 0);
+}
+
+.movescounter {
+  color: white;
+}
+
+.movescounter1 {
+  color: rgb(0, 0, 0);
+  visibility:visible;
+}
+
+.movescounter2 {
+  color: rgb(0, 0, 0);
+  visibility:visible;
+}
+
+.timer-header {
+  color: rgb(0, 0, 0);
+}
+
+.fa-clock {
+  color: rgb(0, 0, 0);
+}
+
+.timer-container {
+  grid-area: timer-container;
+  color: white;
+}
+
+.reset {
+  grid-area: reset-btn;
+}
+
+/*** Buttons ***/
+.btn {
+  border-radius: 40px;
+  border: none;
+  color: black;
+  background: rgb(226,99,32);
+  background: linear-gradient(0deg, rgb(165, 137, 13) 0%, gold 100%);
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 12px;
+  cursor: pointer;
+  outline: none;
+  font-family: "Exo 2", sans-serif;
+}
+
+.btn:hover, .start:hover {
+  background: linear-gradient(0deg, rgb(4, 93, 7) 0%, #04b536 100%);
+  color: white;
+}
+
+.close {
+  align-self: flex-end;
+  color: #28e;
+  font-size: 2rem;
+  margin-right: 30px;
+  position: absolute;
+  top: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: #5cf;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.play-again-btn {
+  margin-bottom: 10px;
+}
+
+.play-again-btn:hover {
+  background: black;
+  color: white;
+}
+
+/*** Deck that contains 16 cards ***/
+.deck {
+  grid-area: deck;
+  background: linear-gradient(to bottom, rgb(231, 178, 47), #615d0b);
+  border-radius: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "card card card card"
+  "card card card card"
+  "card card card card"
+  "card card card card";
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 60%;
+  grid-gap: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.card {
+  background: #09490b;
+  background-image: url("images/kurd.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  border-radius: 0.5em;
+  border: solid 0.1px rgb(204, 204, 204);
+  width: 13rem;
+  height: 6.5rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #0d6610;
+  background-image: url("images/kurd.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 35%;
+}
+
+.deck img {
+  width: 100%;
+  height: 6.5rem;
+  border-radius: 0.5em;
+  border: solid 0.1px rgb(204, 204, 204);
+  visibility: hidden; 
+}
+
+.flip {
+background: #000000;
+cursor: default;
+transform: rotateY(180deg);
+transition: transform 0.3s linear;
+pointer-events: none;
+border: none;
+}
+
+.flip img {
+background: transparent;
+visibility: visible;
+}
+
+.match {
+background: #038728;
+visibility: visible;
+cursor: default;
+animation: pulse 1s;
+}
+
+.match img {
+background: transparent;
+}
+
+.noMatch {
+  background: rgb(182, 3, 3);
+  visibility: visible;
+  cursor: default;
+  animation: pulse 1s;
+}
+
+/*** Game win Modal ***/
+
+/* outer modal container */
+.win-game-modal {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(46, 61, 73);
+  background-color: rgba(46, 61, 73, 0.6);
+  justify-items: center;
+  align-items: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 20px auto;
+  border: 0.8em solid #fc4;
+  width: 90%;
+  height: 90%;
+  position: relative;
+}
+
+.modal p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.modal-img {
+  width: 20%;
+  margin: 15px 0;
+}
+
+.fa-check-circle {
+  color: green;
+  margin: 0 5px;
+}
+
+.fa-check {
+  color: rgb(57, 57, 247);
+  margin: 0 5px;
+}
+
+.fa-times-circle {
+  color: red;
+  margin: 0 5px;
+}
+
+/*** Animations ***/
+@keyframes pulse {
+0% {
+  transform: scale(1);
+}
+80% {
+  transform: scale(1.05);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+@keyframes stars-pulse {
+  0% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+  }
+
+  /*************** Media Queries ***************/
+
+  /*** Small devices ***/
+
+@media only screen and (max-width: 600px){
+
+/***** index.html *****/
+
+.inner-container-home{
+  width: 90%;
+  height: auto;
+  padding: 15px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  color: white;
+}
+
+.inner-container-home h2 {
+  margin: 25px 0;
+}
+
+.inner-container-home p {
+  margin: 20px auto;
+  line-height: 25px;
+  width: 90%;
+}
+
+.home-img {
+  width: 55%;
+  margin: 10px 0;
+}
+
+.start {
+  border-radius: 40px;
+  text-decoration: none;
+  width: 200px;
+  margin-top: 30px;
+  display: block;
+}
+
+/** home.html **/
+
+  .deck {
+    width: 92%;
+    height: 90%;
+    grid-gap: 10px;
+    margin-top: -25px;
+  }
+
+  .header h1 {
+    font-size: 1.3em;
+    margin-top: 15px;
+  }
+
+  .score-panel {
+    width: 100%;
+    font-size: 0.65rem;
+  }
+
+  .timer i {
+    display: none;
+  }
+
+  .moves h3 {
+    font-size: 0.6rem;
+  }
+
+  .card {
+    background-size: 70%;
+  }
+
+  .card img {
+    width: 70%;
+  }
+
+  .reset-btn {
+    width: 80px;
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+
+  .reset-btn i {
+    display: none;
+  }
+
+  .modal-content {
+    height: auto;
+    margin: 20% auto;
+    padding: 50px 8px;
+  }
+
+  .modal p {
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 15px;
+  }
+
+  .modal-img {
+    width: 40%;
+  }
+
+  .close {
+    margin-right: 15px;
+    margin-top: -10px;
+  }
+
+  .play-again-btn {
+    margin-bottom: 20px;
+  }
+}
+
+/*** Tablets ***/
+@media only screen and (min-width: 600px) and (max-width: 768px){
+
+/***** index.html *****/
+
+.inner-container-home{
+  width: 85%;
+  height: 86%;
+  padding: 25px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  color: white;
+}
+
+.inner-container-home h2 {
+  margin: 25px 0;
+  font-size: 3rem;
+}
+
+.inner-container-home p {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+.home-img {
+  width: 50%;
+  margin: 10px 0;
+}
+
+.start {
+  border-radius: 40px;
+  text-decoration: none;
+  width: 200px;
+  margin-top: 0;
+  display: block;
+}
+
+/** home.html **/
+
+  .header h1 {
+    font-size: 2.5em;
+    margin-top: 30px;
+  }
+  
+  .deck {
+    width: 90%;
+    height: 90%;
+    grid-gap: 25px;
+  }
+
+  .score-panel {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .star {
+    font-size: 1.5em;
+  }
+
+  .score-panel h3 {
+    font-size: 1.3rem;
+  }
+
+  .reset-btn {
+    width: 150px;
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .card {
+    background-size: 60%;
+  }
+
+  .card img {
+    width: 60%;
+  }
+  
+  .modal-content {
+    margin: 25% auto;
+    border: 0.8em solid #fc4;
+    width: 80%;
+    height: 60%;
+    padding: 60px 30px;
+  }
+
+  .modal p {
+    margin: 10px auto;
+  }
+
+  .modal-img {
+    width: 30%;
+  }
+
+  .play-again-btn {
+    margin: 20px 0;
+  }
+
+  .close {
+    font-size: 2.7em;
+  }
+}
+
+/** Large tablets **/
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+/***** index.html *****/
+
+.inner-container-home{
+  width: 90%;
+  height: 85%;
+  padding: 15px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  color: white;
+}
+
+.inner-container-home h2 {
+  margin: 25px 0;
+  font-size: 4rem;
+}
+
+.inner-container-home p {
+  margin: 20px auto;
+  width: 90%;
+  font-size: 2rem;
+  line-height: 60px;
+}
+
+.home-img {
+  width: 45%;
+  margin: 10px 0;
+}
+
+.start {
+  border-radius: 40px;
+  text-decoration: none;
+  width: 400px;
+  height: 100px;
+  margin-top: 60px;
+  display: block;
+  font-size: 2rem;
+  line-height: 80px;
+}
+
+/** home.html **/
+  
+  .header h1 {
+    font-size: 3.5em;
+    margin-top: 40px;
+  }
+  
+  .score-panel {
+    width: 90%;
+    font-size: 1.5em;
+  }
+  
+  .deck {
+    width: 85%;
+    grid-gap: 25px;
+    padding: 30px;
+  }
+
+  .reset-btn {
+    width: 160px;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+
+  .card {
+    background-size: 60%;
+  }
+
+  .card img {
+    width: 60%;
+  }
+
+  .modal-content {
+    width: 80%;
+    height: auto;
+    padding: 60px 20px;
+    margin: 25% auto;
+  }
+
+  .modal p {
+    margin: 8px;
+  }
+
+  .modal-img {
+    width: 35%;
+    margin: 35px 0;
+  }
+
+  .play-again-btn {
+    margin-bottom: 25px;
+  }
+
+  .close {
+    margin-right: 20px;
+    margin-top: -15px;
+    font-size: 2.5rem;
+  }
+}
+
+/*** Extra large screens **/
+@media only screen and (min-width: 1920px){
+  .deck {
+    padding: 50px;
+    grid-gap: 50px;
+    border-radius: 60px;
+  }
+
+  .card {
+    width: 95%;
+    height: 95%;
+    border-radius: 60px;
+  }
+
+  .card img {
+    width: 40%;
+  }
+
+  .header h1 {
+    font-size: 8em;
+    margin-top: 2%;
+  }
+
+  .score-panel {
+    font-size: 4em;
+  }
+
+  .star {
+    font-size: 2em;
+  }
+
+  .moves, .moves-header, .timer-container {
+    font-size: 1.5em;
+  }
+
+  .reset-btn {
+    width: 500px;
+    height: 200px;
+    font-size: 1.2em;
+  }
+
+  .modal-content {
+    width: 50%;
+    height: 60%;
+    font-size: 4em;
+    margin: 10% auto;
+  }
+
+  .modal p {
+    padding: 1%;
+  }
+
+  .play-again-btn {
+    margin: 2%;
+    font-size: 3rem;
+    width: 400px;
+    height: 150px;
+  }
+
+  .close {
+    font-size: 7rem;
+    margin-top: -60px;
+  }
+}
